@@ -1,4 +1,4 @@
 package Opgave3;
 
-public class Chicken {
+abstract class Chicken extends Animal implements Edible {
 }
