@@ -1,19 +1,24 @@
 package Opgave2;
 
-public class Cirkel {
-    private int radius;
+import com.sun.corba.se.impl.interceptors.PICurrent;
 
-    public void cirkel(int radius) {
+public class Cirkel {
+    private double radius;
+
+    public void cirkel(float radius) {
         this.radius = radius;
     }
 
-    public double areal(int radius) {
-        if (radius < 0) {
-            System.out.println("Det en ommer, radius kan ikke være negativ");
-            return 0;
-        } else if (radius > 0) {
-            return 3.1415 * (radius * radius);
+    public void setRadius(double radius) throws IllegalArgumentException {
+        if  (radius > 0) {
+            this.radius = Math.PI * (radius * radius);
         }
-        return 1;
+         else {
+             throw new IllegalArgumentException("Det en ommer, radius kan ikke være negativ");
+        }
+    }
+
+    public double getRadius() {
+        return radius;
     }
 }
